@@ -2,10 +2,9 @@ class Main {
   public static void main(String[] args) {
     Pantalla pantalla = new Pantalla();
 
-    pantalla.addFrame(0);
-    pantalla.addFrame(1);
+    pantalla.modificarPixel(new Coordenada(2, 2, 0), 3);
+    pantalla.modificarPixel(new Coordenada(4, 2, 1), 1);
 
-    pantalla.mostrarFrame(0);
-    pantalla.mostrarFrame(1);
+    pantalla.mostrarFrame();
   }
 }

@@ -1,27 +1,27 @@
 class Pantalla {
   private Frame[] pantalla = new Frame[2];
 
-  public Frame generarFrame(int posicion) {
-    Frame frame = new Frame(21);
+  public Pantalla() {
+    pantalla[0] = new Frame(7, 3);
+    pantalla[1] = new Frame(7, 3);
 
-    for (int i = 1; i < 21; i++) {
-      int randomNumber = (int) (Math.random() * 4);
-      frame.modificarPixel(i, randomNumber);
+  }
+
+  public void mostrarFrame() {
+    for (int y = 0; y < 3; y++) {
+      for (int frame = 0; frame < pantalla.length; frame++) {
+        for (int x = 0; x < 7; x++) {
+          Coordenada coordenada = new Coordenada(x, y, frame);
+          System.out.print(pantalla[coordenada.getFrame()].getPixelTraducido(coordenada));
+        }
+        System.out.print(" ");
+      }
+      System.out.println();
     }
-
-    return frame;
-
+    System.out.println();
   }
 
-  public void addFrame(int pos) {
-    pantalla[pos] = generarFrame(pos);
-  }
-
-  public void mostrarFrame(int posicion) {
-    pantalla[posicion].imprimir();
-  }
-
-  public void modificarPixel(int frame, int pos, int nuevoValor) {
-    pantalla[frame].modificarPixel(pos, nuevoValor);
+  public void modificarPixel(Coordenada coordenada, int nuevoValor) {
+    pantalla[coordenada.getFrame()].modificarPixel(coordenada, nuevoValor);
   }
 }
