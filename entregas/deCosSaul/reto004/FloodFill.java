@@ -14,28 +14,21 @@ public class FloodFill {
     new Scanner(System.in).nextLine();
 
     rellenarRecursivo(imagen, 0, 0, '\'', '\0');
-    rellenarRecursivo(imagen, 3, 3, 'o', '\0');
-    rellenarRecursivo(imagen, 19, 3, 'o', '\0');
-    rellenarRecursivo(imagen, 35, 3, 'o', '\0');
-    rellenarRecursivo(imagen, 3, 9, 'x', '\0');
-    rellenarRecursivo(imagen, 15, 9, 'x', '\0');
-    rellenarRecursivo(imagen, 27, 9, 'x', '\0');
-    rellenarRecursivo(imagen, 39, 9, 'x', '\0');
-    rellenarRecursivo(imagen, 3, 14, '|', '\0');
-    rellenarRecursivo(imagen, 19, 14, '|', '\0');
-    rellenarRecursivo(imagen, 35, 14, '|', '\0');
     imprimirImagen(imagen);
     System.out.println("Imagen después del relleno por inundación habiendo empezado en (0,0)");
+    new Scanner(System.in).nextLine();
 
-    // imagen = crearImagenEjemplo();
-    // rellenarIterativo(imagen, 2, 2, '*');
-    // System.out.println("Imagen después del relleno por inundación en (3,3):");
-    // imprimirImagen(imagen);
+    imagen = crearImagenEjemplo(PLANTILLA_001);
+    rellenarIterativo(imagen, 2, 2, '*');
+    imprimirImagen(imagen);
+    System.out.println("Imagen después del relleno por inundación en (3,3):");
+    new Scanner(System.in).nextLine();
 
-    // imagen = crearImagenEjemplo();
-    // int numHabitaciones = contarHabitaciones(imagen);
-    // System.out.println("Número de habitaciones (áreas cerradas): " +
-    // numHabitaciones);
+    imagen = crearImagenEjemplo(PLANTILLA_001);
+    int numHabitaciones = contarHabitaciones(imagen);
+    System.out.println("Número de habitaciones (áreas cerradas): " +
+        numHabitaciones);
+    new Scanner(System.in).nextLine();
   }
 
   private static String[] PLANTILLA_000 = {
